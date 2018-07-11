@@ -1,4 +1,4 @@
-"","Associated Gene","Chromosome","Chromosome Positon","REPORTED GENE(S)","RISK ALLELE FREQUENCY","pvalue","PVALUE_MLOG"
+"","Associated Gene","Chromosome","Chromosome Positon","REPORTED GENE(S)","RISK ALLELE FREQUENCY","P-VALUE","PVALUE_MLOG"
 "1","1q21.2",1,147524657,"BCL9, CHD1L","NR",6e-06,5.22184875
 "2","1p12",1,119975336,"NOTCH2, ADAM30","0.11",4e-08,7.397940009
 "3","1p21.3",1,94604485,"SLC44A3, F3","0.56",6e-06,5.22184875
