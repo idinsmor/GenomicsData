@@ -10,7 +10,6 @@ library(tidyverse)
 
 ```{r}
 GWASCombinedEdit <- GWASCombined %>% select(identifier, resultset, `Associated Gene`, Chromosome, `Chromosome Position`, pvalue) %>% arrange(Chromosome)
-GWASCombinedEdit
-GWASCombinedEdit[!duplicated(GWASCombinedEdit$`Chromosome Position`), ]
+NoDups
 ```
 
