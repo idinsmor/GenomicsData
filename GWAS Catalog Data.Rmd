@@ -1,0 +1,22 @@
+---
+title: "GWAS Catalog Data"
+output: html_notebook
+---
+
+```{r, message = FALSE}
+library(dplyr)
+library(tidyverse)
+```
+
+
+```{r}
+Data <- GWASCentral
+
+Data <- Data %>% select(REGION, CHR_ID, CHR_POS, "REPORTED GENE(S)", "RISK ALLELE FREQUENCY", "P-VALUE", PVALUE_MLOG)
+Data <- Data %>% arrange(CHR_ID)
+DataClean <- Data %>% rename(Chromosome = CHR_ID, "Chromosome Positon" = CHR_POS, Region = REGION)
+DataClean
+```
+
+
+

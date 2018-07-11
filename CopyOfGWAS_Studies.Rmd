@@ -1,0 +1,57 @@
+---
+title: "Genomics Data from GWAS"
+output: html_notebook
+---
+```{r}
+library(dplyr)
+library(readr)
+library(tidyverse)
+library(rvest)
+```
+
+```{r}
+# Data Sets are named by the digits found in the resultset variable column as they are all in the association HGVRS
+
+GWAS <- DS1058 %>% full_join(DS1198) #I tried to create a list to join all at once instead of this                                        format but could not get the join to work with all the                                              variables I wanted
+  GWAS <- GWAS %>% full_join(DS16)
+  GWAS <- GWAS %>% full_join(DS161)
+  GWAS <- GWAS %>% full_join(DS1058)
+  GWAS <- GWAS %>% full_join(DS1198)
+  GWAS <- GWAS %>% full_join(DS1880)
+  GWAS <- GWAS %>% full_join(DS251)
+  GWAS <- GWAS %>% full_join(DS34)
+  GWAS <- GWAS %>% full_join(DS37)
+  GWAS <- GWAS %>% full_join(DS3746)
+  GWAS <- GWAS %>% full_join(DS1656)
+  GWAS <- GWAS %>% full_join(DS1856)
+  GWAS <- GWAS %>% full_join(DS3801)
+  GWAS <- GWAS %>% full_join(DS72)
+  GWAS <- GWAS %>% full_join(DS87)
+  GWAS <- GWAS %>% full_join(DS2912)
+  GWAS <- GWAS %>% full_join(DS88)
+  GWAS <- GWAS %>% full_join(DS89)
+  GWAS <- GWAS %>% full_join(DS9)
+  GWAS <- GWAS %>% full_join(DS2565)
+  GWAS <- GWAS %>% full_join(DS3821)
+  GWAS <- GWAS %>% full_join(DS1096)
+
+GWAS
+```
+
+```{r}
+GWAS <- GWAS %>% select(identifier, resultset, accession, chr, start, pvalue, neglog_pvalue)
+GWAS <- GWAS %>% arrange(chr)
+GWAS # filtered out unnecessary variables
+```
+
+```{r}
+GWAS <- GWAS %>% rename("Associated Gene" = accession, Chromosome = chr, "Start Position" = start)
+GWAS
+
+```
+
+
+
+
+
+
