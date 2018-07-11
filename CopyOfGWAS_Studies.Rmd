@@ -2,7 +2,7 @@
 title: "Genomics Data from GWAS"
 output: html_notebook
 ---
-```{r}
+```{r, message = FALSE}
 library(dplyr)
 library(readr)
 library(tidyverse)
@@ -45,9 +45,12 @@ GWAS # filtered out unnecessary variables
 ```
 
 ```{r}
-GWAS <- GWAS %>% rename("Associated Gene" = accession, Chromosome = chr, "Start Position" = start)
+GWAS <- GWAS %>% rename("Associated Gene" = accession, Chromosome = chr, "Chromosome Position" = start)
 GWAS
+```
 
+```{r}
+write.csv(GWAS, file = "GWASCentralData.csv")
 ```
 
 
